@@ -10,6 +10,9 @@ public class ChatMessageRepository {
     private ArrayList<String> message = new ArrayList<>();
 
     public void addChatMessage(String message){
+        if (this.message.size() == 10){
+            this.message.remove(0);
+        }
         this.message.add(message);
     }
     public List<String> getLastTenMessages(){
